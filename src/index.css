@@ -1,0 +1,77 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Quicksand', 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    --font-heading: 'Outfit', 'Quicksand', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
+
+    /* User Requested Brighter Color Tokens */
+    --color-bright-peach: #FFD6C2;
+    --color-light-coral-pink: #FFB9B5;
+    --color-warm-pastel-yellow: #FFF0B3;
+    --color-light-apricot: #FFE0B8;
+    --color-soft-cream: #FFF9F0;
+    --color-bright-lavender: #E8DFFF;
+    --color-fresh-mint: #D8F5DF;
+    --color-coral: #FF936B;
+    --color-emerald: #58B98A;
+    --color-main-text: #2D2D2D;
+    --color-secondary-text: #787878;
+  }
+
+  body {
+    font-family: var(--font-sans);
+    color: #2D2D2D;
+    margin: 0;
+    /* Beautiful bright sunny gradient blending peach, light coral pink, and warm pastel yellow */
+    background: radial-gradient(circle at 15% 20%, #FFF9F0 0%, transparent 45%),
+                linear-gradient(125deg, #FFB9B5 0%, #FFD6C2 28%, #FFE0B8 60%, #FFF0B3 100%);
+    background-attachment: fixed;
+    min-height: 100vh;
+  }
+
+  .dark body {
+    color: #f3f4f6;
+    background: linear-gradient(135deg, #281d22 0%, #2f201d 40%, #241e23 100%);
+    background-attachment: fixed;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    letter-spacing: -0.01em;
+  }
+
+  .font-mono {
+    font-family: var(--font-mono);
+    font-variant-numeric: tabular-nums;
+  }
+}
+
+/* Custom rounded pastel scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 152, 107, 0.4);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 152, 107, 0.7);
+}
+
+/* Print Styles */
+@media print {
+  body {
+    background: #ffffff !important;
+    color: #000000 !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+}

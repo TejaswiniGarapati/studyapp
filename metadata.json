@@ -1,0 +1,6 @@
+{
+  "name": "FOCUSMATE",
+  "description": "Your goals. Your time. Your balance. AI-powered student productivity and life-management platform for exams, placements, coding, and healthy daily routines.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
